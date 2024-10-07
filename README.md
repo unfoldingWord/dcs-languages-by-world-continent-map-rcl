@@ -1,4 +1,4 @@
-# DCS Languages by World Continent Map RCL
+# World Language Map RCL
 
 This is a React component that renders a clickable world map. The continent clicked on will return the languages to the onContinentClick() function provided. 
 
@@ -7,7 +7,7 @@ This is a React component that renders a clickable world map. The continent clic
 To clone the repository, run the following command:
 
 ```bash
-git clone https://github.com/unfoldingWord/dcs-languages-by-world-continent-map-rcl.git
+git clone https://github.com/unfoldingWord/world-language-map-rcl.git
 ```
 
 ### Installation
@@ -41,13 +41,13 @@ To use WorldLanguageMap as a 3rd party app, follow these steps:
 1. Install the package from npm:
 
 ```bash
-npm install dcs-languages-by-world-continent-map-rcl
+npm install world-language-map-rcl
 ```
 
 2. Import the component into your project:
 
 ```javascript
-import { WorldLanguageMap } from 'dcs-languages-by-world-continent-map-rcl';
+import { WorldLanguageMap } from 'world-language-map-rcl';
 ```
 
 3. Use the component in your code:
