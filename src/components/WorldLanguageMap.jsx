@@ -16,14 +16,14 @@ import langnames from '../data/langnames.json';
  *   metadataTypes=["rc"]
  * />
  */
-const WorldLanguageMap = ({ style = {}, onContinentClick = () => {}, filterByCatalog = false, subjects = null, stage = 'other', metadataTypes = null }) => {
+const WorldLanguageMap = ({ style = {}, onContinentClick = () => {}, filterByCatalog = false, subjects = null, stage = 'other', metadataTypes = null, dcsUrl = "https://git.door43.org" }) => {
   const [selectedContinent, setSelectedContinent] = useState();
   const [languages, setLanguages] = useState(langnames);
 
   useEffect(() => {
     const fetchLanguages = async () => {
       try {
-        let url = 'https://git.door43.org/api/v1/catalog/list/languages';
+        let url = `${dcsUrl}/api/v1/catalog/list/languages`;
         const params = new URLSearchParams();
         if (subjects) params.append('subject', subjects);
         if (stage) params.append('stage', stage);
@@ -42,7 +42,7 @@ const WorldLanguageMap = ({ style = {}, onContinentClick = () => {}, filterByCat
     if (filterByCatalog) {
       fetchLanguages();
     }
-  }, [filterByCatalog, subjects, stage, metadataTypes]);
+  }, [filterByCatalog, subjects, stage, metadataTypes, dcsUrl]);
 
   useEffect(() => {
     const handleContinentClick = (event) => {
@@ -227,6 +227,7 @@ WorldLanguageMap.propTypes = {
   subjects: PropTypes.array,
   stage: PropTypes.string,
   metadataTypes: PropTypes.array,
+  dcsUrl: PropTypes.string,
 };
 
 export default WorldLanguageMap;
